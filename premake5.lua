@@ -1,7 +1,8 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
-	-- staticruntime "off"
+	staticruntime "off"
+	-- staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -51,9 +52,7 @@ project "GLFW"
 		}
 
 	filter "system:windows"
-		-- buildoptions { "-std=c11", "-lgdi32" }
 		systemversion "latest"
-		staticruntime "On"
 
 		files
 		{
